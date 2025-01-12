@@ -25,3 +25,9 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
 #buttons ytd-button-renderer {
   display: none !important;
 }
+
+/* Hide shorts on video page ( <ytd-reel-shelf-renderer> ) */
+
+ytd-reel-shelf-renderer {
+  display: none !important;
+}
