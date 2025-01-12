@@ -45,6 +45,7 @@ onMutationQueue.push((mutation) => {
 
   const target = mutation.target;
 
+  if (!target.parentElement) return; // Got error about that once, Donno how element added to tree may not have parent, but...
   if (target.parentElement.id !== "buttons") return;
   if (target.tag === "YTD-BUTTON-RENDERER") return;
   if (!target.classList.contains("style-scope")) return;
@@ -71,6 +72,25 @@ onMutationQueue.push((mutation) => {
   console.log("my-youtube-extension: Hide-voice-search-button: Success!");
   return true;
 });
+
+// Hide Shorts sections ( <ytd-rich-section-renderer> with <span id="title">Shorts</span> )
+
+{
+  const sections = document.getElementsByTagName("ytd-rich-section-renderer");
+
+  const intervalId = setInterval(() => {
+    if (sections.length !== 0) clearInterval(intervalId);
+
+    for (const section of sections) {
+      const title = section.querySelector("#title");
+      console.log(title);
+      if (!title) continue;
+      if (title.innerText !== "Shorts") continue;
+
+      section.style.display = "none";
+    }
+  }, 100);
+}
 
 // Run observer
 
