@@ -50,7 +50,9 @@ ytd-comment-thread-renderer:hover ytd-menu-renderer {
 
 /* Hide shorts on subscriptions page ( <ytd-item-section-renderer> with <ytd-reel-shelf-renderer> inside ) */
 
-ytd-item-section-renderer:has(ytd-reel-shelf-renderer) {
+ytd-item-section-renderer:not(.ytd-watch-next-secondary-results-renderer):has(
+    ytd-reel-shelf-renderer
+  ) {
   display: none !important;
 }
 
