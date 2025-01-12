@@ -1,13 +1,14 @@
 {
-    "manifest_version": 3,
-    "name": "My YouTube Extension",
-    "version": "1.0",
-    "description": "A Chrome extension for YouTube.",
-    "permissions": ["activeTab"],
-    "content_scripts": [
-        {
-            "matches": ["*://www.youtube.com/"],
-            "js": ["content_scripts/youtube_main.js"]
-        }
-    ]
+  "manifest_version": 3,
+  "name": "My YouTube Extension",
+  "version": "1.0",
+  "description": "A Chrome extension for YouTube.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/"],
+      "js": ["content_scripts/youtube_main.js"],
+      "css": ["content_scripts/youtube_main.css"]
+    }
+  ]
 }
