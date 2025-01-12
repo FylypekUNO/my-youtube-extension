@@ -19,7 +19,7 @@ function addOnMutationOnce(task) {
   onMutationQueue.push(task);
 }
 
-// Hide tags bar ( <div id="header"> )
+// Hide tags bar ( <div id="header" class="style-scope ytd-rich-grid-renderer">)
 
 onMutationQueue.push((mutation) => {
   if (mutation.type !== "childList") return;
@@ -34,6 +34,25 @@ onMutationQueue.push((mutation) => {
   target.style.display = "none";
 
   console.log("my-youtube-extension: Hide-tags-bar: Success!");
+  return true;
+});
+
+// Hide "Create" button ( <ytd-button-renderer class="style-scope ytd-masthead"> inside <div id="buttons"> )
+
+onMutationQueue.push((mutation) => {
+  if (mutation.type !== "childList") return;
+  if (mutation.addedNodes.length === 0) return;
+
+  const target = mutation.target;
+
+  if (target.parentElement.id !== "buttons") return;
+  if (target.tag === "YTD-BUTTON-RENDERER") return;
+  if (!target.classList.contains("style-scope")) return;
+  if (!target.classList.contains("ytd-masthead")) return;
+
+  target.style.display = "none";
+
+  console.log("my-youtube-extension: Hide-create-button: Success!");
   return true;
 });
 
