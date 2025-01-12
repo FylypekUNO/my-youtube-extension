@@ -73,3 +73,9 @@ ytd-rich-section-renderer:has(ytd-rich-shelf-renderer) {
 #header.style-scope.ytd-rich-grid-renderer {
   display: none !important;
 }
+
+/* Hide notifications badge ( <div class="yt-spec-icon-badge-shape__badge"> ) */
+
+.yt-spec-icon-badge-shape__badge {
+  display: none !important;
+}
