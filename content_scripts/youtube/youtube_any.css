@@ -25,9 +25,3 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
 #buttons ytd-button-renderer {
   display: none !important;
 }
-
-/* Hide tags bar ( <div id="header" class="style-scope ytd-rich-grid-renderer">) */
-
-#header.style-scope.ytd-rich-grid-renderer {
-  display: none !important;
-}

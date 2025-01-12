@@ -6,9 +6,14 @@
   "permissions": ["activeTab"],
   "content_scripts": [
     {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content_scripts/youtube/youtube_any.js"],
+      "css": ["content_scripts/youtube/youtube_any.css"]
+    },
+    {
       "matches": ["*://www.youtube.com/"],
-      "js": ["content_scripts/youtube_main.js"],
-      "css": ["content_scripts/youtube_main.css"]
+      "js": ["content_scripts/youtube/youtube_main.js"],
+      "css": ["content_scripts/youtube/youtube_main.css"]
     }
   ]
 }
