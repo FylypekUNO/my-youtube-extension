@@ -8,9 +8,13 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
   margin-left: 0 !important;
 }
 
-/* Hide Sponsor info in mini-player ( <div class="ytInlinePlayerControlsTopLeftControls"> ) */
+/* Hide paid content overlay ( <div class="ytInlinePlayerControlsTopLeftControls">, <div class="ytp-paid-content-overlay">) */
 
 .ytInlinePlayerControlsTopLeftControls {
+  display: none !important;
+}
+
+.ytp-paid-content-overlay {
   display: none !important;
 }
 
@@ -38,13 +42,17 @@ yt-related-chip-cloud-renderer {
   display: none !important;
 }
 
-/* Make 3 dots on comment only visible when hovering over it ( <ytd-comment-thread-renderer> ) */
+/* Make 3 dots on comment and videos only visible when hovering over it ( <ytd-comment-thread-renderer>, <ytd-rich-item-renderer>, <ytd-compact-video-renderer> ) */
 
-ytd-comment-thread-renderer ytd-menu-renderer {
+ytd-comment-thread-renderer ytd-menu-renderer,
+ytd-rich-item-renderer ytd-menu-renderer,
+ytd-compact-video-renderer ytd-menu-renderer {
   opacity: 0;
 }
 
-ytd-comment-thread-renderer:hover ytd-menu-renderer {
+ytd-comment-thread-renderer:hover ytd-menu-renderer,
+ytd-rich-item-renderer:hover ytd-menu-renderer,
+ytd-compact-video-renderer:hover ytd-menu-renderer {
   opacity: 1;
 }
 
