@@ -1,5 +1,0 @@
-/* Hide tags bar ( <div id="header" class="style-scope ytd-rich-grid-renderer">) */
-
-#header.style-scope.ytd-rich-grid-renderer {
-  display: none !important;
-}

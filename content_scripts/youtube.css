@@ -57,3 +57,9 @@ ytd-item-section-renderer:has(ytd-reel-shelf-renderer) {
 ytd-rich-section-renderer:has(ytd-rich-shelf-renderer) {
   display: none !important;
 }
+
+/* Hide tags bar from main site ( <div id="header" class="style-scope ytd-rich-grid-renderer">) */
+
+#header.style-scope.ytd-rich-grid-renderer {
+  display: none !important;
+}
