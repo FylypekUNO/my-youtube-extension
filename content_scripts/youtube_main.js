@@ -24,7 +24,6 @@ function addOnMutationOnce(task) {
 onMutationQueue.push((mutation) => {
   if (mutation.type !== "childList") return;
   if (mutation.addedNodes.length === 0) return;
-  console.log("my-youtube-extension: Added nodes:", mutation.addedNodes);
 
   const target = mutation.target;
 
@@ -32,9 +31,9 @@ onMutationQueue.push((mutation) => {
   if (!target.classList.contains("style-scope")) return;
   if (!target.classList.contains("ytd-rich-grid-renderer")) return;
 
-  console.error("my-youtube-extension: Hide header", target);
-
   target.style.display = "none";
+
+  console.log("my-youtube-extension: Hide-tags-bar: Success!");
   return true;
 });
 
@@ -47,4 +46,4 @@ const observer = new MutationObserver((mutations) => {
 observer.observe(document.body, {
   childList: true,
   subtree: true,
-})[1][2];
+});
