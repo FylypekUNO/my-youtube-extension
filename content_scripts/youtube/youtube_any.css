@@ -31,3 +31,9 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
 ytd-reel-shelf-renderer {
   display: none !important;
 }
+
+/* Hide tags bar on video page ( <yt-related-chip-cloud-renderer> ) */
+
+yt-related-chip-cloud-renderer {
+  display: none !important;
+}
