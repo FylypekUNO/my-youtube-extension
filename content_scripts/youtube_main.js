@@ -57,22 +57,6 @@ onMutationQueue.push((mutation) => {
   return true;
 });
 
-// Hide voice search button ( <div id="voice-search-button"> )
-
-onMutationQueue.push((mutation) => {
-  if (mutation.type !== "childList") return;
-  if (mutation.addedNodes.length === 0) return;
-
-  const target = mutation.target;
-
-  if (target.id !== "voice-search-button") return;
-
-  target.style.display = "none";
-
-  console.log("my-youtube-extension: Hide-voice-search-button: Success!");
-  return true;
-});
-
 // Hide Shorts sections ( <ytd-rich-section-renderer> with <span id="title">Shorts</span> )
 
 {

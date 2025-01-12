@@ -13,3 +13,9 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
 .ytInlinePlayerControlsTopLeftControls {
   display: none !important;
 }
+
+/* Hide voice search button ( <div id="voice-search-button"> ) */
+
+#voice-search-button {
+  display: none !important;
+}
