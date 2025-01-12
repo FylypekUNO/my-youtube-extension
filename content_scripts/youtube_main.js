@@ -95,6 +95,11 @@ onMutationQueue.push((mutation) => {
 // Run observer
 
 const observer = new MutationObserver((mutations) => {
+  if (mutations.length === 0) {
+    observer.disconnect();
+    return;
+  }
+
   mutations.forEach(onMutation);
 });
 

@@ -7,3 +7,9 @@ ytd-mini-guide-renderer {
 ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
   margin-left: 0 !important;
 }
+
+/* Hide Sponsor info in mini-player ( <div class="ytInlinePlayerControlsTopLeftControls"> ) */
+
+.ytInlinePlayerControlsTopLeftControls {
+  display: none !important;
+}
