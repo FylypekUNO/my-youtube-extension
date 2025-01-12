@@ -37,26 +37,6 @@ onMutationQueue.push((mutation) => {
   return true;
 });
 
-// Hide "Create" button ( <ytd-button-renderer class="style-scope ytd-masthead"> inside <div id="buttons"> )
-
-onMutationQueue.push((mutation) => {
-  if (mutation.type !== "childList") return;
-  if (mutation.addedNodes.length === 0) return;
-
-  const target = mutation.target;
-
-  if (!target.parentElement) return; // Got error about that once, Donno how element added to tree may not have parent, but...
-  if (target.parentElement.id !== "buttons") return;
-  if (target.tag === "YTD-BUTTON-RENDERER") return;
-  if (!target.classList.contains("style-scope")) return;
-  if (!target.classList.contains("ytd-masthead")) return;
-
-  target.style.display = "none";
-
-  console.log("my-youtube-extension: Hide-create-button: Success!");
-  return true;
-});
-
 // Hide Shorts sections ( <ytd-rich-section-renderer> with <span id="title">Shorts</span> )
 
 {

@@ -19,3 +19,9 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
 #voice-search-button {
   display: none !important;
 }
+
+/* Hide "Create" button ( <ytd-button-renderer> inside <div id="buttons"> ) */
+
+#buttons ytd-button-renderer {
+  display: none !important;
+}
