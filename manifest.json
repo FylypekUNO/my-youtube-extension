@@ -6,12 +6,20 @@
   "permissions": ["activeTab"],
   "content_scripts": [
     {
-      "matches": [
-        "*://www.youtube.com/",
-        "*://www.youtube.com/watch",
-        "*://www.youtube.com/shorts/*"
-      ],
-      "css": ["content_scripts/youtube.css"]
+      "matches": ["*://www.youtube.com/*"],
+      "css": ["content_scripts/youtube_global.css"]
+    },
+    {
+      "matches": ["*://www.youtube.com/feed/*"],
+      "css": ["content_scripts/youtube_feed.css"]
+    },
+    {
+      "matches": ["*://www.youtube.com/"],
+      "css": ["content_scripts/youtube_main.css"]
+    },
+    {
+      "matches": ["*://www.youtube.com/watch/*"],
+      "css": ["content_scripts/youtube_watch.css"]
     }
   ]
 }

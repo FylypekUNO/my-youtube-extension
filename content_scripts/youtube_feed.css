@@ -1,0 +1,11 @@
+/* Hide shorts on subscriptions page ( <ytd-item-section-renderer> with <ytd-reel-shelf-renderer> inside ) */
+
+ytd-item-section-renderer:not(.ytd-watch-next-secondary-results-renderer):has(
+    ytd-reel-shelf-renderer
+  ) {
+  display: none !important;
+}
+
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer) {
+  display: none !important;
+}

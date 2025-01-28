@@ -1,0 +1,11 @@
+/* Bigger gaps between videos ( <ytd-rich-item-renderer> ) */
+
+ytd-rich-item-renderer {
+  padding: 2.5%;
+}
+
+/* Hide tags bar from main site ( <div id="header" class="style-scope ytd-rich-grid-renderer">) */
+
+#header.style-scope.ytd-rich-grid-renderer {
+  display: none !important;
+}
