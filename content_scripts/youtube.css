@@ -1,0 +1,98 @@
+/*
+ Naming convention:
+ "Remove" means display: none
+ "Hide" means opacity: 0
+
+/******************************************************************************
+ * Global
+ ******************************************************************************/
+
+/* Remove drawer when it's in mini mode ( <ytd-mini-guide-renderer mini-quide-visible> ) */
+ytd-mini-guide-renderer {
+  display: none !important;
+}
+ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
+  margin-left: 0 !important;
+}
+
+/* Remove paid content overlay ( <div class="ytInlinePlayerControlsTopLeftControls">, <div class="ytp-paid-content-overlay">) */
+.ytInlinePlayerControlsTopLeftControls {
+  display: none !important;
+}
+.ytp-paid-content-overlay {
+  display: none !important;
+}
+
+/* Remove voice search button ( <div id="voice-search-button"> ) */
+#voice-search-button {
+  display: none !important;
+}
+
+/* Remove "Create" button ( <ytd-button-renderer> inside <div id="buttons"> ) */
+#buttons ytd-button-renderer {
+  display: none !important;
+}
+
+/* Remove notifications badge ( <div class="yt-spec-icon-badge-shape__badge"> ) */
+.yt-spec-icon-badge-shape__badge {
+  display: none !important;
+}
+
+/******************************************************************************
+ * Main Page
+ ******************************************************************************/
+
+/* Remove tags bar */
+#primary > ytd-rich-grid-renderer > #header {
+  display: none !important;
+}
+
+/* Better layout for videos */
+#primary > ytd-rich-grid-renderer > #contents {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
+/* Remove sections like Shorts */
+#primary > ytd-rich-grid-renderer > #contents > ytd-rich-section-renderer {
+  display: none !important;
+}
+
+/* Bigger gaps between videos */
+#primary > ytd-rich-grid-renderer > #contents > ytd-rich-item-renderer {
+  flex-basis: 400px !important;
+  box-sizing: border-box !important;
+  padding: 30px !important;
+}
+
+/******************************************************************************
+ * Watch Page
+ ******************************************************************************/
+
+/* Remove related Shorts */
+#items > ytd-item-section-renderer > #contents > ytd-reel-shelf-renderer {
+  display: none !important;
+}
+
+/* Hide action menu until hover (meant for comments, but may work for other things too) */
+#body > #action-menu {
+  opacity: 0 !important;
+}
+#body:hover > #action-menu {
+  opacity: 1 !important;
+}
+
+/* Hide action menu until hover (onyl for realted videos) */
+ytd-compact-video-renderer #menu {
+  opacity: 0 !important;
+}
+ytd-compact-video-renderer:hover #menu {
+  opacity: 1 !important;
+}
+
+/* Remove download button */
+ytd-download-button-renderer {
+  display: none !important;
+}
