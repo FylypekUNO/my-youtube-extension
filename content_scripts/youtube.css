@@ -38,6 +38,16 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
   display: none !important;
 }
 
+/* Hide action menus until hover */
+* > #menu,
+* > #action-menu {
+  opacity: 0 !important;
+}
+*:hover > #menu,
+*:hover > #action-menu {
+  opacity: 1 !important;
+}
+
 /******************************************************************************
  * Main Page
  ******************************************************************************/
@@ -72,24 +82,8 @@ ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
  ******************************************************************************/
 
 /* Remove related Shorts */
-#items > ytd-item-section-renderer > #contents > ytd-reel-shelf-renderer {
+#items > ytd-reel-shelf-renderer {
   display: none !important;
-}
-
-/* Hide action menu until hover (meant for comments, but may work for other things too) */
-#body > #action-menu {
-  opacity: 0 !important;
-}
-#body:hover > #action-menu {
-  opacity: 1 !important;
-}
-
-/* Hide action menu until hover (onyl for realted videos) */
-ytd-compact-video-renderer #menu {
-  opacity: 0 !important;
-}
-ytd-compact-video-renderer:hover #menu {
-  opacity: 1 !important;
 }
 
 /* Remove download button */
